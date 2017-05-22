@@ -19,14 +19,15 @@ import java.io.ByteArrayInputStream;
  * Created by Administrator on 2017/5/15.
  */
 
-public class FirstActivity extends AppCompatActivity {
+public class FirstActivity extends BaseActivity {
     private Button testButton;
-    private Toolbar toolbar;
+//    private Toolbar toolbar;//-
+    private ToolBarX toolBarX;//+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.first_layout);
-        toolbar=(Toolbar)findViewById(R.id.toolBar);
+//        setContentView(R.layout.first_layout);//-
+//        toolbar=(Toolbar)findViewById(R.id.toolBar);
         testButton=(Button)findViewById(R.id.testbutton);
         testButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -35,33 +36,50 @@ public class FirstActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-//      setSupportActionBar(toolbar);
-        toolbar.setTitle(R.string.title_first);
-        toolbar.setSubtitle(R.string.title_sub_first);
-        toolbar.setNavigationIcon(R.mipmap.ic_launcher);
-        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+//        toolBarX=getToolBar();
+//        toolBarX.setTitle(R.string.title_first).setSubTitle(R.string.title_sub_first);
+        getToolBar().setDisplayHomeAsUpEnabled(true).setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.e("TAG","setNavigationOnClickListener");
+
             }
-        });
-//        toolbar.inflateMenu(R.menu.menu_main);
-//        toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
+        }).setTitle("ToolBar").setSubTitle("XSub");
+
+//      setSupportActionBar(toolbar);
+//        toolbar.setTitle(R.string.title_first);
+//        toolbar.setSubtitle(R.string.title_sub_first);
+//        toolbar.setNavigationIcon(R.mipmap.ic_launcher);
+//        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
 //            @Override
-//            public boolean onMenuItemClick(MenuItem item) {
-//                item.getItemId();
-//                Log.e("TAG","setOnMenuItemClickListener");
-//                return true;
+//            public void onClick(View v) {
+//                Log.e("TAG","setNavigationOnClickListener");
 //            }
 //        });
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(false);
-//        getSupportActionBar().setDisplayShowTitleEnabled(false);
-        getSupportActionBar().setTitle("setTitleActionBar");
-        //1 ToolBar的标题必须在setSupportActionBar之前设置
-        //2 当调用setSupportActionBar之后，ToolBar.inflateMenu()方法就失败
-        //3 ToolBar推荐和ActionBar一起是使用
+
+
+////        toolbar.inflateMenu(R.menu.menu_main);
+////        toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
+////            @Override
+////            public boolean onMenuItemClick(MenuItem item) {
+////                item.getItemId();
+////                Log.e("TAG","setOnMenuItemClickListener");
+////                return true;
+////            }
+////        });
+//        setSupportActionBar(toolbar);
+//        getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+////        getSupportActionBar().setDisplayShowTitleEnabled(false);
+//        getSupportActionBar().setTitle("setTitleActionBar");
+//        //1 ToolBar的标题必须在setSupportActionBar之前设置
+//        //2 当调用setSupportActionBar之后，ToolBar.inflateMenu()方法就失败
+//        //3 ToolBar推荐和ActionBar一起是使用
     }
+
+    @Override
+    public int getLayoutId() {
+        return R.layout.first_layout;
+    }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
