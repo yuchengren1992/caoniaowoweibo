@@ -20,16 +20,17 @@ import java.io.ByteArrayInputStream;
  */
 
 public class FirstActivity extends BaseActivity {
-    private Button testButton;
+    private Button button;
 //    private Toolbar toolbar;//-
-    private ToolBarX toolBarX;//+
+    private ToolBar1 toolBar1;//+
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 //        setContentView(R.layout.first_layout);//-
 //        toolbar=(Toolbar)findViewById(R.id.toolBar);
-        testButton=(Button)findViewById(R.id.testbutton);
-        testButton.setOnClickListener(new View.OnClickListener() {
+
+        button=(Button)findViewById(R.id.testbutton);
+        button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent(FirstActivity.this,SecondActivity.class);
@@ -38,12 +39,16 @@ public class FirstActivity extends BaseActivity {
         });
 //        toolBarX=getToolBar();
 //        toolBarX.setTitle(R.string.title_first).setSubTitle(R.string.title_sub_first);
-        getToolBar().setDisplayHomeAsUpEnabled(true).setNavigationOnClickListener(new View.OnClickListener() {
+        getToolBar()
+//                .setDisplayHomeAsUpEnabled(true)
+                .setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
             }
-        }).setTitle("ToolBar").setSubTitle("XSub");
+        })
+                .setTitle("ToolBar")
+                .setSubTitle("XSub");
 
 //      setSupportActionBar(toolbar);
 //        toolbar.setTitle(R.string.title_first);
@@ -92,8 +97,6 @@ public class FirstActivity extends BaseActivity {
         Log.e("TAG","setNavigationOnClickListener");
         return super.onOptionsItemSelected(item);
     }
-    //    @Override
-//    public int getLayoutId() {
-//        return R.layout.first_layout;
-//    }
+
+
 }

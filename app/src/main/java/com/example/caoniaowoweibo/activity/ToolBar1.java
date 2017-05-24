@@ -9,22 +9,27 @@ import android.widget.RelativeLayout;
 import com.example.caoniaowoweibo.R;
 
 /**
- * Created by Administrator on 2017/5/22.
+ * Created by Administrator on 2017/5/24.
  */
 
-public class ToolBarX {
-    private Toolbar mToolbar;
-    private AppCompatActivity mActivity;
-    private ActionBar mActionbar;
-    private RelativeLayout rlCustom;
+public class ToolBar1 {
+private Toolbar mToolbar;
+private AppCompatActivity mActivity;
+private ActionBar mActionbar;
+private RelativeLayout rlCustom;
 
-    public ToolBarX(Toolbar Toolbar, final AppCompatActivity Activity) {
-        this.mToolbar =Toolbar;
-        this.rlCustom=(RelativeLayout)mToolbar.findViewById(R.id.rlCustom);
-        this.mActivity = Activity;
+    public ToolBar1(){
+
+    }
+
+    public ToolBar1(Toolbar toolbar,AppCompatActivity activity) {
+        mToolbar =toolbar;
+        mActivity =activity;
+        rlCustom=(RelativeLayout)toolbar.findViewById(R.id.rlCustom);
         mActivity.setSupportActionBar(mToolbar);
         mActionbar=mActivity.getSupportActionBar();
         mActionbar.setDisplayHomeAsUpEnabled(true);
+//     rlCustom=(RelativeLayout)mToolbar.findViewById(R.id.rlCustom);
         mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -34,42 +39,42 @@ public class ToolBarX {
 
     }
 
-    public ToolBarX setTitle(String text){
+    public ToolBar1 setTitle(String text){
         mActionbar.setTitle(text);
         return this;
     }
 
-    public ToolBarX setSubTitle(String text){
+    public ToolBar1 setSubTitle(String text){
         mActionbar.setSubtitle(text);
         return this;
     }
 
-    public ToolBarX setTitle(int resId){
+    public ToolBar1 setTitle(int resId){
         mActionbar.setTitle(resId);
         return this;
     }
 
-    public ToolBarX setSubTitle(int resId){
+    public ToolBar1 setSubTitle(int resId){
         mActionbar.setSubtitle(resId);
         return this;
     }
 
-    public ToolBarX setNavigationOnClickListener(View.OnClickListener listener){
+    public ToolBar1 setNavigationOnClickListener(View.OnClickListener listener){
         mToolbar.setNavigationOnClickListener(listener);
         return this;
     }
 
-    public ToolBarX setNavigationIcon(int resId){
+    public ToolBar1 setNavigationIcon(int resId){
         mToolbar.setNavigationIcon(resId);
         return this;
     }
 
-    public ToolBarX setDisplayHomeAsUpEnabled(boolean show){
+    public ToolBar1 setDisplayHomeAsUpEnabled(boolean show){
         mActionbar.setDisplayHomeAsUpEnabled(show);
         return this;
     }
 
-    public ToolBarX setCustomView(View view){
+    public ToolBar1 setCustomView(View view){
         rlCustom.removeAllViews();
         rlCustom.addView(view);
         return this;
