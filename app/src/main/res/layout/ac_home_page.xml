@@ -3,6 +3,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
     <!--存放页面内容-->
     <FrameLayout
         android:id="@+id/rlContainer"
@@ -10,12 +11,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
-    <!--底层菜单-->
-    <!--<android.support.v4.app.FragmentTabHost-->
-        <!--android:visibility="gone"-->
-        <!--android:id="@android:id/tabhost"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"/>-->
+    <!--&lt;!&ndash;底层菜单&ndash;&gt;-->
+    <android.support.v4.app.FragmentTabHost
+        android:visibility="gone"
+        android:id="@android:id/tabhost"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
 
     <RadioGroup
         android:orientation="horizontal"

@@ -30,8 +30,8 @@ public abstract class BaseActivity extends AppCompatActivity{
 //        setTheme(R.style.AppTheme.);
         toolbar=(Toolbar)findViewById(R.id.toolbar1); //+
         rlContent=(RelativeLayout)findViewById(R.id.rlContent);
-//        View v=getLayoutInflater().inflate(getLayoutId(),rlContent,false);//IOC 控制反转 在父类中调用子类的实现
-//        rlContent.addView(v);
+        View v=getLayoutInflater().inflate(getLayoutId(),rlContent,false);//IOC 控制反转 在父类中调用子类的实现
+        rlContent.addView(v);
         ToolBarX toolBarX=new ToolBarX(toolbar,this);
 //        toolbar.setLogo(R.drawable.bg_ic_launcher);
 //        toolbar.setTitle("123");

@@ -7,6 +7,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.caoniaowoweibo.R;
+
 /**
  * Created by Administrator on 2017/5/24.
  */
@@ -20,6 +22,8 @@ public class ProfileFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return super.onCreateView(inflater, container, savedInstanceState);
+        View view=inflater.inflate(R.layout.my_fragment,container,false);
+        return view;
+
     }
 }
