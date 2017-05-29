@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">caoniaowoweibo</string>
-    <string name="title_first" >First</string>
-    <string name="title_sub_first" >Sub</string>
-    <string name="action_setting" >Setting</string>
+    <string name="title_first">First</string>
+    <string name="title_sub_first">Sub</string>
+    <string name="action_setting">Setting</string>
     <string name="lbl_message">消息</string>
     <string name="lbl_profile">搜索</string>
     <string name="lbl_home">首页</string>

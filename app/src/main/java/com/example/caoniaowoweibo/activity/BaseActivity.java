@@ -1,5 +1,6 @@
 package com.example.caoniaowoweibo.activity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -18,23 +19,24 @@ import com.example.caoniaowoweibo.R;
 public abstract class BaseActivity extends AppCompatActivity{
 
 //    private TextView tvtitle;
-    private RelativeLayout rlContent;
-    private Toolbar toolbar;//+
-    private ToolBar1 toolBar1;//+
+      private RelativeLayout rlContent;
+      private Toolbar toolbar;//+
+      private ToolBarX toolBarX;//+
 
     @Override
     protected void onCreate( Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setTheme(R.style.AppTheme);
         setContentView(R.layout.ac_baselayout);//有改动 本来是一个TextView
-//        tvtitle=(TextView)findViewById(R.id.tvtitle);
-        toolbar=(Toolbar)findViewById(R.id.toolBar); //+
+//        setTheme(R.style.AppTheme.);
+        toolbar=(Toolbar)findViewById(R.id.toolbar1); //+
         rlContent=(RelativeLayout)findViewById(R.id.rlContent);
-        toolBar1=new ToolBar1(toolbar,this);
-
-        View v=getLayoutInflater().inflate(getLayoutId(),rlContent,false);//IOC 控制反转 在父类中调用子类的实现
-        rlContent.addView(v);
-
+//        View v=getLayoutInflater().inflate(getLayoutId(),rlContent,false);//IOC 控制反转 在父类中调用子类的实现
+//        rlContent.addView(v);
+        ToolBarX toolBarX=new ToolBarX(toolbar,this);
+//        toolbar.setLogo(R.drawable.bg_ic_launcher);
+//        toolbar.setTitle("123");
+//        toolbar.setSubtitle("456");
+//        setSupportActionBar(toolbar);
     }
 
     public abstract int getLayoutId();
@@ -52,15 +54,15 @@ public abstract class BaseActivity extends AppCompatActivity{
     }
 
     @Override
-    public void onActivityReenter(int resultCode, Intent data) {
-        super.onActivityReenter(resultCode, data);
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
         overridePendingTransition(R.anim.anim_in_right_left,R.anim.anim_out_right_left);
     }
 
-    public ToolBar1 getToolBar() {
-        if (toolBar1==null) {
-            toolBar1=new ToolBar1(toolbar,this);
+    public ToolBarX getToolBar() {
+        if (toolBarX ==null) {
+            toolBarX =new ToolBarX(toolbar,this);
         }
-        return toolBar1;
+        return toolBarX;
     }
 }
