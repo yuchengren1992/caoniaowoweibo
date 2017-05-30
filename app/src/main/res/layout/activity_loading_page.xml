@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_loading_page"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <!--android:oritetation="vertical"为什么这里不能用otitetation?-->
+    
+    <ImageView
+        android:layout_centerInParent="true"
+        android:src="@mipmap/ic_launcher"
+        android:id="@+id/loadingpage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:gravity="center"
+        android:layout_below="@id/loadingpage"
+        android:text="@string/lbl_loading"
+        android:padding="@dimen/space_m"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <!--layout_below的id用ImageView的id-->
+</RelativeLayout>
